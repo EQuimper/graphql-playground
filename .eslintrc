@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "equimper",
+    "prettier"
+  ],
+  "globals": {
+    "before": false
+  }
+}
