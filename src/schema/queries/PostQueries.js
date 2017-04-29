@@ -1,6 +1,6 @@
 import { GraphQLList, GraphQLString } from 'graphql';
 
-import PostType from '../types/post_type';
+import PostType from '../types/PostTypes';
 import PostService from '../../services/PostService';
 
 export const posts = {

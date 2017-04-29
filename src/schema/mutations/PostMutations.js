@@ -1,7 +1,7 @@
 import { GraphQLNonNull, GraphQLString, GraphQLID } from 'graphql';
 import uuid from 'uuid/v4';
 
-import PostType from '../types/post_type';
+import PostType from '../types/PostTypes';
 import PostService from '../../services/PostService';
 
 export const createPost = {
@@ -25,5 +25,15 @@ export const updatePost = {
   },
   resolve(_, { _id, ...rest }) {
     return PostService.update({ _id }, rest);
+  },
+};
+
+export const deletePost = {
+  type: PostType,
+  args: {
+    _id: { type: new GraphQLNonNull(GraphQLID) },
+  },
+  resolve(_, { _id }) {
+    return PostService.delete({ _id });
   },
 };
